@@ -128,7 +128,7 @@ footer{
     color:#edf7ff;font-weight:500;font-size:2.25em;margin-bottom:15px
 }
 #lead-overlay{
-    position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0;background:rgba(33,125,187,0.35);z-index:1
+    position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0;background:rgba(33,125,187,0.40);z-index:1
 }
 #lead-down{
     position:absolute;left:0;right:0;width:100%;text-align:center;z-index:10;bottom:15px;color:#fff
