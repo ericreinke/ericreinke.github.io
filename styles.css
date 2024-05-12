@@ -1,0 +1,85 @@
+html {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+body {
+	margin: 0;
+}
+
+.nav-bar {
+
+}
+
+.nav-list{
+	float: left;
+
+}
+
+.horizontal-table{
+	display: block;
+	padding: 20px;
+
+}
+.nav-item{
+	display: block;
+	padding: 20px;
+}
+
+.inlineTable {
+    display: inline-block;
+    padding: 0px 50px;
+    vertical-align: top;
+
+}
+.table-div {
+	padding: 0px 500px;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.pad {
+	padding: 20px;
+}
+
+table {
+	border-collapse: collapse;
+    font-family: Tahoma, Geneva, sans-serif;
+    vertical-align: top;
+}
+table td {
+	font-size: 15px;
+	padding: 5px;
+}
+table thead td {
+	background-color: #54585d;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 13px;
+	border: 1px solid #54585d;
+}
+table tbody td {
+	color: #636363;
+	border: 1px solid #dddfe1;
+}
+table tbody tr {
+	background-color: #f9fafb;
+}
+table tbody tr:nth-child(odd) {
+	background-color: #ffffff;
+}
