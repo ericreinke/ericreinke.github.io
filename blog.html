@@ -19,8 +19,244 @@
       <a class="active" href="blog.html">Blog</a>      
     </div>
     <center>
-        <div>
-            <p>Blog coming soon...</p>
+        <div class="block">
+            <div><span class="bold title"></span></div>
+            <div class="indent">
+              <span></span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">April 24 2024 - Introducing 'Rating Reruns'</span></div>
+            <div class="indent">
+              <span>One of the biggest flaws of this rating system we aimed to fix was the effect of new players on the system.  Not only could a new player heavily influence the ratings of players they play against, but their rating would also be inaccurate, had they not played many tournaments.<br/><br/>A trivial solution to this would be to eye test each and every new player when inserting them into the system.  This method is laborious, potentially biased, and even with best intentions in mind, would be very inaccurate in some cases.<br/><br/>Rating Reruns are an attempt to resolve this and quickly adjust those players who are far away from their deserved ranking.  This concept was originally introduced in the <a href="https://playerzone.roundnetgermany.de/ranking/rg-index/">Roundnet Germany Index (RGX).</a><br/><br/>How it works:<br/>When a player that is new or inactive plays a tournament, they are subject to a Rating Rerun.  We will use the results from this players tournament to assign them a more accurate starting rating before we calculate everyone else's rating change.  Let's look at the following example: <br/><br/>Lets say, for sake of simplicity, we have a tournament with 2 teams who are playing against eachother.  On one side we have a veteran team where both players are ranked at 1000 (team average of 1000).  On the other side we have a player named Bike Burray.  Bike, being the community leader and teacher that he is, decides to play with one of his students.  This is the student's first time at a tournament, and realistically should be rated around 500.  Regardless, they get automatically assigned a rating of 1000, as per usual.<br/><br/></span>
+              <center>
+                <div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Veteran 1</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>Veteran 2</td>
+                                <td>1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bike Burray</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>New Student</td>
+                                <td>1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </center>   
+              <span><br/>Over the span of an entire tournament, Bike Burray's team loses a lot.  Lets say for example at the end of a long tournament the final ratings look like this.<br/><br/></span>
+              <center>
+                <div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Veteran 1</td>
+                                <td>1200</td>
+                            </tr>
+                            <tr>
+                                <td>Veteran 2</td>
+                                <td>1200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bike Burray</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <td>New Student</td>
+                                <td>800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </center>
+              <span><br/>This final result isn't as accurate as it should have been.  Bike Burray shouldn't be losing this much rating just because a new player starts at 1000 rating.  <br/><br/>Now with Rating Reruns, we can better estimate this new (or inactive) player's rating.  We will take this players rating after the tournament (800) and rerun the entire tournament with this updated value but all other players will return to what they were originally.  This happens with all new or inactive players in the same run.  Now the ratings of the players at the start of the tournament look like this:<br/><br/>
+              </span>
+              <center>
+                <div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Veteran 1</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>Veteran 2</td>
+                                <td>1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bike Burray</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>New Student</td>
+                                <td>800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </center>   
+              <span>
+                <br/>And at the end of the tournament, after running the results of all the exact same games again, the final ratings look something like this:<br/><br/>
+              </span>
+              <center>
+                <div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Veteran 1</td>
+                                <td>1125</td>
+                            </tr>
+                            <tr>
+                                <td>Veteran 2</td>
+                                <td>1125</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                  <div class="inlineTable">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Rating</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bike Burray</td>
+                                <td>875</td>
+                            </tr>
+                            <tr>
+                                <td>New Student</td>
+                                <td>675</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </center>   
+              <span>
+                <br/>This is not perfect, but it in system unlike chess, for example, where there are much fewer games played and more games played with and against the same people, trying to more accurately predict a players starting rating is important.  This same example is applicable to a case where 'New Student' is replaced by a player that 'used to be great but now is literally over-rated'<br/><br/>Similarly, the opposite affect would take place if we replaced 'New Student' with a player who is 'inactive but got really good since the last time they played a tournament'.<br/><br/> This change is not retroactive, for the sake of not confusing players when their ratings are changed after playing no games, but is in effect indefinitely from now on.<br/><br/> There is some room for experimentation with this feature.  We could continuously Rerun a players rating until the results of their first tournament converge to a certain rating +/- a threshold.  However this would put an immense value on a player's first performance and would be easily influenced by the rating of players they play with and against.  There is a balance to be found between a single rerun and an infinite converging number of reruns.  After testing and examining some specific cases where veteran players return to the scene overrated, we believe a single rerun is helpful and more accurate than not.
+              </span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">April 10 2024 - Changes to active requirements</span></div>
+            <div class="indent">
+              <span>Added March Madness and Spring Spikes tournaments for effective rankings for April 1 2024.<br/><br/>Updated Open 'active' requirements to require at least 2 tournaments played in the last 9 months and to require at least one ROTC tournament played in the last 9 months.  Previously was at least 1 tournament in the last 6 months and at least 2 tournaments in the last 12 months.<br/><br/>Updated Women's 'active' requirements to require at least 1 tournament played in the last 9 months.  Previously was at least 1 tournament in the last 12 months.<br/><br/>This should better reflect who is truly active in the sport, while considering limiting factors such as the off season, important tournaments, and lack of Women's divisions.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">March 11 2024</span></div>
+            <div class="indent">
+              <span>Added Family Day Open tournament.  Generated effective rankings for March 1 2024 </span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Feb 21 2024</span></div>
+            <div class="indent">
+              <span>Implemented feature allowing for generation of tournament reports by player.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Feb 17 2024</span></div>
+            <div class="indent">
+              <span>Added ability to generate lists including or excluding inactive and/or nonlocal players.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Feb 7 2024</span></div>
+            <div class="indent">
+              <span>Implement use of tournament multiplier when inserting and calculating tournaments.  Retroactive.<br/><br/>Pushed all ranking lists and raw csvs to remote.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Feb 6 2024</span></div>
+            <div class="indent">
+              <span>Fixed a bug where recalculating rating on a given date would not accurately pull the players starting rating.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Feb 1 2024</span></div>
+            <div class="indent">
+              <span>Initialize players in the top 31 2020 rankings to have a scaled value based on community voted results.  Help kickstart the system with more accurate data then simply starting everyone at 1000.</span>
+            </div>
         </div>
         
     </center>
@@ -28,30 +264,3 @@
 
 </html>
 
-
-
-
-<!-- How was my starting rating determined? 
-If your first RO appearance was the community voted rankings for 2020 (top 31 players), you were assigned a rating according to a simple 0.5x^2 curve with y=1485 at x=0 and y=1250 at x=30
-If your first RO appearance was an advanced or elite division, you were automatically assigned a rating of 1000*
-If your first RO appearance was in any other division other than the highest open division, you were automatically assigned a rating of 800
-All players in the womens ranking list were automatically assigned a starting rating of 1000
-.
-*There are special cases where we attempted to accurately rate new players to ensure more accurate results.  One example is Thomas Hamilton, one of the best players in the world at the time, who played in ROTC Windsor 2023.  Giving him a standard starting rating of 1000 would incorrectly impact the rankings and would take dozens of games (if not, tournaments) amongst the community to resolve.
-
-
-I have signed up on Fwango with different names and different email addresses/accounts.  Are all my games correctly counted?
-If you do not see your name multiple times on the full rankings, then we have already manually managed your multiple accounts.  If you see your name more than once please let us know and we can correct this.
-
-I see a game that is incorrect.  Can I resolve this?
-With the way Fwango teams works, it is very possible that games are listed with incorrect players, or simply the score was inputted incorrectly at the time.  We tried our best to audit all tournaments, especially those in 2023, however older tournaments are harder to remember.  If you see an incorrect entry please let us know and we can correct it or mark it as 'excluded' from our ranking calculations.  Since all rankings would be re-calculated it is very likely that older games (<=2022) will have minimal effect on your current ranking.
-
-Do games in Women's divisions affect rating in the open ranking?
-No; only games in the women's division can affect the women's rankings and all other divisions besides coed affect the open rankings
-
-Why is there no co-ed ranking?
-There are simply not enough co-ed events to make any meaningful or accurate ranking.  
-
-
-Does this mean someone who has competed in a women's division and an open division can appear on both rankings?
-Yes -->

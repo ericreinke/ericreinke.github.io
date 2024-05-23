@@ -19,8 +19,409 @@
       <a href="blog.html">Blog</a>      
     </div>
     <center>
-        <div>
-            <p>FAQ coming soon...</p>
+        <div class="block">
+            <div><span class="bold title">How does it work?</span></div>
+            <div class="indent">
+            <span>The Reinke Roundnet Rating system is, at its core, an <a href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO rating system</a>.  It takes the average rating of both players on both teams for each game, and based on the winner, some rating is exchanged.  Both players on a given team will win or lose the same rating after any game, regardless of their relative rating to eachother.  The rating exchanged is always zero sum (with the exception of Rating Rerun). </span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Does score matter?</span></div>
+            <div class="indent">
+            <span>Not as of now, but perhaps in the future.  When this happens, it will be in a way that would only ever benefit the winning team, as to incentivize inserting correct scores in fwango instead of 1-0.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">How are games in a best of 3 calculated?</span></div>
+            <div class="indent">
+            <span>Games in a best of 3 are all calculated individually and chronologically.  The winners of game 1 will win rating from the losers, and same with game 2 and potentially game 3.  This means that you would lose less rating if you were to lose a set 2-1, since in the one game that you did win, you won some rating back.  This can make a big difference in cases where a relatively weak team takes a game off of a relatively strong team.  For example if the strong team loses game 2 against the weaker team but wins game 3, their rating change might look something like this:<br/><br/>Game 1 (W): +1<br/>Game 2 (L): -49<br/>Game 3 (W): +1<br/>Net: -47<br/><br/>This is an extreme case but you here you can see that the winning team of a set can actually lose a fair amount of rating.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Do I win/lose rating for consolation games?</span></div>
+            <div class="indent">
+            <span>All first round loss games in a single elimination bracket are worth half of those in pools and the regular bracket with the exception of the 3rd place game.  This means you win and lose half of what you usually would, had you played this match up in pools or main bracket.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Do I win/lose rating for a forfeit?</span></div>
+            <div class="indent">
+            <span>No.  Games that are forfeit before their start do not count for any rating change and are indicated in fwango by a negative score for the forfeiting team.<br/><br/>Games that are forfeit in the middle of play for any reason do count for rating change and the score should be recorded in fwango as it was at the time of the forfeit</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">How is my initial starting rating determined?</span></div>
+            <div class="indent">
+            <span>Your initial rating is determined based on the first Ontario tournament you played.  If you signed up for the highest possible open division, your starting rating is set to 1000.  If you did not, your starting rating is 500.  The same applies to the women's rankings however it has been rare to see more than one women's division in Ontario<br/> There are a few exceptions.  The following players had their starting rating evaluated manually:<br/><br/></span>
+            <center><table>
+              <thead>
+                  <tr>
+                      <td>Player</td>
+                      <td>Year Added</td>
+                      <td>Initial Rating</td>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>Preston Bies</td>
+                    <td>2021</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>Thomas Hamilton</td>
+                    <td>2023</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Etienne Cote</td>
+                    <td>2023</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Jé Gagnon</td>
+                    <td>2024</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Samuel Prince</td>
+                    <td>2024</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Maxime Prince</td>
+                    <td>2024</td>
+                    <td>2500</td>
+                </tr>
+              </tbody>
+            </table></center>
+            <span><br/>Additionally, if you are one of the 31 players that appeared in the 2020 EOY community voted rankings, you were assigned a (near linearly) scaled rating based on those results.  These ratings are as follows:<br/><br/></span>
+            <div>
+              <div class="inlineTable">
+
+                <table >
+                    <thead>
+                        <tr>
+                            <td>Player</td>
+                            <td>Initial Rating</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Emerson Dean</td>
+                            <td>1485</td>
+                        </tr>
+                        <tr>
+                            <td>Cam Korvemaker</td>
+                            <td>1469</td>
+                        </tr>
+                        <tr>
+                            <td>Josh Brandes</td>
+                            <td>1455</td>
+                        </tr>
+                        <tr>
+                            <td>Branden Domm</td>
+                            <td>1441</td>
+                        </tr>
+                        <tr>
+                            <td>Jordan Brandes</td>
+                            <td>1428</td>
+                        </tr>
+                        <tr>
+                            <td>Caleb Schmidt</td>
+                            <td>1415</td>
+                        </tr>
+                        <tr>
+                            <td>Conrad Wagler</td>
+                            <td>1402</td>
+                        </tr>
+                        <tr>
+                            <td>Andrew Nunn</td>
+                            <td>1390</td>
+                        </tr>
+                        <tr>
+                            <td>Hudson Ford</td>
+                            <td>1378</td>
+                        </tr>
+                        <tr>
+                            <td>Grady Flemming</td>
+                            <td>1367</td>
+                        </tr>
+                        <tr>
+                            <td>Adrian Neufield</td>
+                            <td>1357</td>
+                        </tr>
+                        <tr>
+                            <td>Evan Korvemaker</td>
+                            <td>1347</td>
+                        </tr>
+                        <tr>
+                            <td>Eric Reinke</td>
+                            <td>1337</td>
+                        </tr>
+                        <tr>
+                            <td>Alex Ceccanase</td>
+                            <td>1328</td>
+                        </tr>
+                        <tr>
+                            <td>Ian Donaghey</td>
+                            <td>1319</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <div class="inlineTable">
+                <table >
+                    <thead>
+                        <tr>
+                            <td>Player</td>
+                            <td>Initial Rating</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kris Kurasz</td>
+                            <td>1311</td>
+                        </tr>
+                        <tr>
+                            <td>Derek Soetemans</td>
+                            <td>1304</td>
+                        </tr>
+                        <tr>
+                            <td>Rod Fritz</td>
+                            <td>1297</td>
+                        </tr>
+                        <tr>
+                            <td>Adrian Brouwer</td>
+                            <td>1290</td>
+                        </tr>
+                        <tr>
+                            <td>Dylan Carroll</td>
+                            <td>1284</td>
+                        </tr>
+                        <tr>
+                            <td>Tyler Veenstra</td>
+                            <td>1278</td>
+                        </tr>
+                        <tr>
+                            <td>Nick Batoolall</td>
+                            <td>1273</td>
+                        </tr>
+                        <tr>
+                            <td>Jaden Weber</td>
+                            <td>1269</td>
+                        </tr>
+                        <tr>
+                            <td>Emerson Petri</td>
+                            <td>1265</td>
+                        </tr>
+                        <tr>
+                            <td>Shant Mardiross</td>
+                            <td>1261</td>
+                        </tr>
+                        <tr>
+                            <td>Rob Weins</td>
+                            <td>1258</td>
+                        </tr>
+                        <tr>
+                            <td>Kayla Lariviere</td>
+                            <td>1255</td>
+                        </tr>
+                        <tr>
+                            <td>Reilly Paquette</td>
+                            <td>1253</td>
+                        </tr>
+                        <tr>
+                            <td>Steven Lam</td>
+                            <td>1252</td>
+                        </tr>
+                        <tr>
+                            <td>Max Zhang</td>
+                            <td>1251</td>
+                        </tr>
+                        <tr>
+                            <td>Peter Lam</td>
+                            <td>1250</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>      
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">Does starting at a lower rating put me at a significant disadvantage if I want to move up in rank?</span></div>
+            <div class="indent">
+            <span>In short; no.  As all ELO systems do, players that are far from their deserved rating are quickly moved towards it.  If you start at a much lower rating than you should be, your wins will give you much more rating and your losses will lose you much less.<br/><br/>Consider the following example:  The left chart is the top 10 active players as of May 1 2024.  The right chart is the same list but we have changed Chris Brown's starting rating to be 500 instead of 1000<br/><br/></span>
+            <div>
+            <div class="inlineTable">
+                <table >
+                    <thead>
+                        <tr>
+                            <td>Rank</td>
+                            <td>Name</td>
+                            <td>Rating</td>
+                            <td>Initial</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Emerson Dean</td>
+                            <td>2193</td>
+                            <td>1485</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Chris Brown</td>
+                            <td>1954</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tyler Babin</td>
+                            <td>1821</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Ben Pernfuss</td>
+                            <td>1815</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Reilly Paquette</td>
+                            <td>1718</td>
+                            <td>1253</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Colin TOLENTINO</td>
+                            <td>1711</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Joshua Hachey</td>
+                            <td>1672</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Jared Ang</td>
+                            <td>1534</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Nicholas Puopolo</td>
+                            <td>1525</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Chris Loubert</td>
+                            <td>1507</td>
+                            <td>1000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="inlineTable">
+                  <table >
+                    <thead>
+                        <tr>
+                            <td>Rank</td>
+                            <td>Name</td>
+                            <td>Rating</td>
+                            <td>Initial</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Emerson Dean</td>
+                            <td>2198</td>
+                            <td>1485</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Chris Brown</td>
+                            <td>1913</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Ben Pernfuss</td>
+                            <td>1840</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Tyler Babin</td>
+                            <td>1814</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Reilly Paquette</td>
+                            <td>1721</td>
+                            <td>1253</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Colin TOLENTINO</td>
+                            <td>1704</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Joshua Hachey</td>
+                            <td>1671</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Jared Ang</td>
+                            <td>1533</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Nicholas Puopolo</td>
+                            <td>1526</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Chris Loubert</td>
+                            <td>1506</td>
+                            <td>1000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <span><br/>After recalculating all games, we see that Chris' rating is now roughly 40 rating less; a relatively small amount given the 500 rating adjustment we made.  Chris remains still very clearly the second best player at this time.  We also see the next biggest impact is that of Ben's rating (+25).  This is explained by the fact that Ben is commonly Chris' partner.<br/><br/>**Every other player in the entire list at this time, not just the top 10, experiences AT MOST a single digit rating change because of our modification (a near negligible difference in the long run).</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">I played a tournament but I do not see my name on the list.  Why?</span></div>
+            <div>
+            <span>You do not appear on the rankings for one of two reasons:<br/><br/>1. You are marked as 'inactive'.  The requirements for being active are as follows: <br/><br/>Open:<br/> - You must have played at least 2 tournaments within the last 9 months<br/> - You must have played at least 1 official ROTC tournament within the last 9 months<br/><br/>Womens:<br/> - You must have played at least 1 tournament in a women's only division in the last 9 months <br/> <br/>2. You are marked as a foreign player:  This is an Ontario only ranking list and only includes players from Ontario.  Foreign players still have a rating and are processed like any other player, they just do not appear on the rankings.</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title">How is it decided whether a tournament should be included or not?</span></div>
+            <div class="indent">
+            <span>In theory every tournament played in Ontario should be included, as more data would lead to a more accurate rating list.  However, in practice, there a few reasons why a given tournament might be excluded:<br/><br/>- The tournament does not follow the IRF ruleset at the time (eg. Revol, basement tournament, etc...)<br/>- The tournament owner does not want to share the fwango<br/>- The complete fwango does not exist (eg. Individual tournaments, tournaments pre 2021, etc...)<br/>- The tournament was very clearly advertised as one that does not promote competition<br/>- The tournament has many foreign or new players that are not expected to play another Ontario tournament in the near future, making the initial ratings hard to estimate and render the results from majority of games useless (eg. Toronto STS)</span>
+            </div>
+        </div>
+        <div class="block">
+            <div><span class="bold title"></span></div>
+            <div class="indent">
+            <span></span>
+            </div>
         </div>
         
     </center>
@@ -31,13 +432,7 @@
 
 
 
-<!-- How was my starting rating determined? 
-If your first RO appearance was the community voted rankings for 2020 (top 31 players), you were assigned a rating according to a simple 0.5x^2 curve with y=1485 at x=0 and y=1250 at x=30
-If your first RO appearance was an advanced or elite division, you were automatically assigned a rating of 1000*
-If your first RO appearance was in any other division other than the highest open division, you were automatically assigned a rating of 800
-All players in the womens ranking list were automatically assigned a starting rating of 1000
-.
-*There are special cases where we attempted to accurately rate new players to ensure more accurate results.  One example is Thomas Hamilton, one of the best players in the world at the time, who played in ROTC Windsor 2023.  Giving him a standard starting rating of 1000 would incorrectly impact the rankings and would take dozens of games (if not, tournaments) amongst the community to resolve.
+<!-- 
 
 
 I have signed up on Fwango with different names and different email addresses/accounts.  Are all my games correctly counted?
